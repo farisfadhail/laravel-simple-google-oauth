@@ -48,6 +48,49 @@
         href="{{ route('user.login.google') }}"
         class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
     >
-        {{ __('Log in') }}
+        {{ __('Log in Google') }}
     </a>
+    <a
+        href="{{ route('user.login.github') }}"
+        class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+    >
+        {{ __('Log in Github') }}
+    </a>
+    <a
+        {{--href="{{ route('user.login.tiktok') }}"--}}
+        href="https://www.tiktok.com/v2/auth/authorize?client={{ env('TIKTOK_CLIENT_ID') }}&scope=user.info.basic&response_type=code&redirect_uri={{ env('TIKTOK_CLIENT_REDIRECT') }}&state={{ Str::random(36) }}"
+        class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+    >
+        {{ __('Log in Tiktok') }}
+    </a>
+    <a
+        href="{{ route('user.login.facebook') }}"
+        class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+    >
+        {{ __('Log in Facebook') }}
+    </a>
+    <a
+        href="{{ route('user.login.instagram') }}"
+        class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+    >
+        {{ __('Log in Instagram') }}
+    </a>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '315581144364703',
+            xfbml      : true,
+            version    : 'v17.0'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 </x-guest-layout>

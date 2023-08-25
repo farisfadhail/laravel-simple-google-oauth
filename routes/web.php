@@ -21,7 +21,19 @@ Route::get('/', function () {
 
 // socialite routes
 Route::get('sign-in-google', [UserController::class, 'google'])->name('user.login.google');
-Route::get('auth/google/callback', [UserController::class, 'handleProviderCallback'])->name('user.google.callback');
+Route::get('auth/google/callback', [UserController::class, 'handleGoogleProviderCallback'])->name('user.google.callback');
+
+Route::get('sign-in-github', [UserController::class, 'github'])->name('user.login.github');
+Route::get('auth/github/callback', [UserController::class, 'handleGithubProviderCallback'])->name('user.github.callback');
+
+Route::get('sign-in-tiktok', [UserController::class, 'tiktok'])->name('user.login.tiktok');
+Route::get('auth/tiktok/callback', [UserController::class, 'handleTiktokProviderCallback'])->name('user.tiktok.callback');
+
+Route::get('sign-in-facebook', [UserController::class, 'facebook'])->name('user.login.facebook');
+Route::get('auth/facebook/callback', [UserController::class, 'handleFacebookProviderCallback'])->name('user.facebook.callback');
+
+Route::get('sign-in-instagram', [UserController::class, 'instagram'])->name('user.login.instagram');
+Route::get('auth/instagram/callback', [UserController::class, 'handleInstagramProviderCallback'])->name('user.instagram.callback');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
