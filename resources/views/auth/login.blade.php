@@ -57,8 +57,7 @@
         {{ __('Log in Github') }}
     </a>
     <a
-        {{--href="{{ route('user.login.tiktok') }}"--}}
-        href="https://www.tiktok.com/v2/auth/authorize?client={{ env('TIKTOK_CLIENT_ID') }}&scope=user.info.basic&response_type=code&redirect_uri={{ env('TIKTOK_CLIENT_REDIRECT') }}&state={{ Str::random(36) }}"
+        href="{{ route('user.login.tiktok') }}"
         class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
     >
         {{ __('Log in Tiktok') }}
@@ -74,6 +73,18 @@
         class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
     >
         {{ __('Log in Instagram') }}
+    </a>
+    <a
+        href="{{ route('coba.accessToken.fb') }}"
+        class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+    >
+        {{ __('Coba Access Token FB') }}
+    </a>
+    <a
+        href="{{ route('openai-test') }}"
+        class="mx-3 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+    >
+        {{ __('Coba OpenAI') }}
     </a>
     <script>
         window.fbAsyncInit = function() {

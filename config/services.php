@@ -61,4 +61,7 @@ return [
         'redirect' => env('INSTAGRAM_CLIENT_REDIRECT')
     ],
 
+    'openai' => [
+        'api_key' => env('OPENAI_API_KEY')
+    ]
 ];

@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// OpenAI Test
+Route::get('openai-test', [UserController::class, 'OpenAiApiTest'])->name('openai-test');
+
 // socialite routes
 Route::get('sign-in-google', [UserController::class, 'google'])->name('user.login.google');
 Route::get('auth/google/callback', [UserController::class, 'handleGoogleProviderCallback'])->name('user.google.callback');
@@ -34,6 +37,8 @@ Route::get('auth/facebook/callback', [UserController::class, 'handleFacebookProv
 
 Route::get('sign-in-instagram', [UserController::class, 'instagram'])->name('user.login.instagram');
 Route::get('auth/instagram/callback', [UserController::class, 'handleInstagramProviderCallback'])->name('user.instagram.callback');
+
+Route::get('coba-access-token', [UserController::class, 'cobaAccessToken'])->name('coba.accessToken.fb');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
